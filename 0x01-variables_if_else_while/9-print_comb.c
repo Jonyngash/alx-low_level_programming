@@ -1,23 +1,27 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
+ * main - main function
  *
- * Return: Always 0 (success)
+ * Return: 0 on success
  */
-
 int main(void)
-        {
-	int a;
+{
+	int s = 0, e = 9;
 
-	for (a = 0; a < 10; a++)
+	while (s <= e)
 	{
-		putchar(a + '0');
-		if (a < 99);
+		putchar(s + '0');
+
+		if (s != e)
 		{
 			putchar(',');
 			putchar(' ');
 		}
+		s++;
 	}
+
 	putchar('\n');
+
 	return (0);
-	}
+}
