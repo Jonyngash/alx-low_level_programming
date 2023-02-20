@@ -1,14 +1,13 @@
 #include <stdio.h>
 
 /**
- * main - Prints the size of various typesa based on
- * the computer it is compiled and run on. .
+ * main - main function
+ *
  * Return: Always 0 (Success)
  */
 
 
 int main(void)
-
 {
 	printf("Size of char: %zu byte(s)\n", sizeof(char));
 
