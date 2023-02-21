@@ -2,7 +2,10 @@
 
 /**
  * print_alphabet_x10 - prints the alphabet in lowercase x10
+<<<<<<< HEAD
  *
+=======
+>>>>>>> 3-main.c
  * Return: nothing on success.
  */
 void print_alphabet_x10(void)
