@@ -1,5 +1,5 @@
 /**
- * times_table - prints the 9 time table
+ * times_table - Prints the 9 times table starting with 0
  *
  * Return : nothing on success
  */
@@ -37,7 +37,7 @@ void times_table(void)
 				_putchar('\n');
 			s++;
 		}
-		s = o;
+		s = 0;
 		count++;
 	}
 }
