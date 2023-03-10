@@ -1,64 +1,49 @@
 #include <stdio.h>
-	#include <stdlib.h>
-	#include <ctype.h>
-	#include <string.h>
-	/**
-	 * check_num - check - string there are digit
-	 * @str: array str
-	 *
-	 * Return: Always 0 (Success)
-	 */
-	int check_num(char *str)
+#include <stdlib.h>
+
+/**
+ * main - entry point; multiply given numbers
+ *
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: 0
+ */
+
+int main(int argc, char *argv[])
+{
+	int i, j, result, zero;
+
+	result = 0;
+
+	/* check if only one argument (function name) is passed*/
+	if (argc == 1)
 	{
-		/*Declaring variables*/
-		unsigned int count;
-		count = 0;
-
-		while (count < strlen(str)) /*count string*/
-
-		{
-			if (!isdigit(str[count])) /*check if str there are digit*/
-			{
-				return (0);
-			}
-			count++;
-		}
-
-		return (1);
+		printf("0\n");
+		return (0);
 	}
-	/**
-	 * main - Print the name of the program
-	 * @argc: Count arguments
-	 * @argv: Arguments
-	 *
-	 * Return: Always 0 (Success)
-	 */
 
-	int main(int argc, char *argv[])
+	/* iterate over argc and print result or return error if char is found*/
+	for (i = 1; i < argc; i++)
 	{
-		/*Declaring variables*/
-		int count;
-		int str_to_int;
-		int sum = 0;
-
-		count = 1;
-		while (count < argc) /*Goes through the whole array*/
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			if (check_num(argv[count]))
-
-			{
-				str_to_int = atoi(argv[count]); /*ATOI --> convert string to int*/
-				sum += str_to_int;
-			}
-	/*Condition if one of the number contains symbols that are not digits*/
-			else
+			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
 			{
 				printf("Error\n");
 				return (1);
 			}
-			count++;
+
+			if (*argv[i] == '0')
+				zero = 1;
 		}
 
-		printf("%d\n", sum); /*print sum*/
-		return (0);
+		result += atoi(argv[i]);
 	}
+	if (result > 0)
+		printf("%d\n", result);
+	if (zero == 1 && result <= 0)
+		printf("%d\n", 0);
+
+	return (0);
+}
